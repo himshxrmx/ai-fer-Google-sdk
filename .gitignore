@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment & Secrets
+.env
+*.env
+new_key.txt
+*.key
+
+# Test artifacts
+test.js
+test_api.js
+install.bat
+test_env.bat
+install.log
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db

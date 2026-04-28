@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Attendance Dashboard — Analysis History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your classroom engagement analysis history with image-to-result mapping.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Particle Background -->
+<div class="particle-bg"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar flex-between">
+  <div class="logo gradient-text">SMART ATTENDANCE</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#" class="active-link">Dashboard</a>
+  </div>
+</nav>
+
+<!-- DASHBOARD WRAPPER -->
+<div class="dashboard">
+  <div class="dashboard-content">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+      <div>
+        <h2 class="gradient-text">Analysis History</h2>
+        <p class="dash-subtitle">Track which image produced which engagement result</p>
+      </div>
+      <button class="btn btn-outline btn-sm" id="refreshBtn" onclick="loadDashboard()">
+         Refresh
+      </button>
+    </div>
+
+    <!-- ================= SUMMARY STATS (Latest) ================= -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card stat-primary">
+        <div class="stat-card-icon"></div>
+        <h4>Total Students</h4>
+        <h2 id="total">—</h2>
+        <p class="stat-label">Latest analysis</p>
+      </div>
+
+      <div class="stat-card stat-success">
+        <div class="stat-card-icon"></div>
+        <h4>Engaged</h4>
+        <h2 id="engaged">—</h2>
+        <p class="stat-label">Happy + Neutral + Surprised</p>
+      </div>
+
+      <div class="stat-card stat-danger">
+        <div class="stat-card-icon"></div>
+        <h4>Not Engaged</h4>
+        <h2 id="notEngaged">—</h2>
+        <p class="stat-label">Bored + Sad + Angry</p>
+      </div>
+
+      <div class="stat-card stat-info">
+        <div class="stat-card-icon"></div>
+        <h4>Engagement Rate</h4>
+        <h2 id="engRate">—</h2>
+        <p class="stat-label">Overall percentage</p>
+      </div>
+    </div>
+
+    <!-- ================= CHART ================= -->
+    <div class="chart-card">
+      <h3>Engagement Trend</h3>
+      <p class="chart-subtitle">Engagement percentage over your last analyses</p>
+      <canvas id="engagementChart" height="100"></canvas>
+    </div>
+
+    <!-- ================= HISTORY SECTION ================= -->
+    <div class="history-section">
+      <h3 class="gradient-text mb-20"> Image ↔ Result History</h3>
+      <p class="history-subtitle mb-40">Each card shows the uploaded image alongside its AI analysis output</p>
+
+      <!-- Loading State -->
+      <div id="historyLoading" class="history-loading">
+        <div class="loader"></div>
+        <p>Loading analysis history...</p>
+      </div>
+
+      <!-- Empty State -->
+      <div id="historyEmpty" class="empty-state hidden">
+        <div class="empty-icon"></div>
+        <h3>No Analysis History Yet</h3>
+        <p>Upload and analyze a classroom image to see results here.</p>
+        <a href="index.html" class="btn btn-primary mt-20">Analyze an Image</a>
+      </div>
+
+      <!-- History Cards Container -->
+      <div id="historyGrid" class="history-grid hidden"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= IMAGE MODAL ================= -->
+<div class="modal-overlay" id="imageModal">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <h3 id="modalTitle">Analysis Details</h3>
+      <span class="modal-close" onclick="closeModal()">✕</span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-image-wrap">
+        <img id="modalImage" alt="Analyzed classroom image">
+      </div>
+      <div class="modal-details" id="modalDetails"></div>
+    </div>
+  </div>
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

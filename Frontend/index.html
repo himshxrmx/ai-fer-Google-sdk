@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Attendance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Optional Particle Background -->
+<div class="particle-bg"></div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar flex-between">
+  <div class="logo gradient-text">SMART ATTENDANCE</div>
+
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#features">Features</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()"></div>
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-content fade-up">
+
+    <h1>AI Powered Classroom Engagement</h1>
+    <p>
+      Detect student focus and engagement instantly using Facial Expression Recognition
+      and real-time AI analytics.
+    </p>
+
+    <!-- Call To Action Buttons -->
+    <div class="hero-cta">
+      <button class="btn btn-primary">Try Now</button>
+      <button class="btn btn-outline">Learn More</button>
+    </div>
+
+    <!-- ================= UPLOAD SYSTEM ================= -->
+
+    <div class="upload-box glass-hover mt-40" id="dropArea">
+
+      <p>Drag & Drop Classroom Image</p>
+      <span>OR</span>
+
+      <div class="upload-actions">
+        <button onclick="triggerFile()" class="btn btn-outline">Choose Image</button>
+        <button onclick="uploadImage()" class="btn btn-primary">Analyze</button>
+      </div>
+
+      <input type="file" id="imageInput" hidden>
+
+      <!-- Image Preview -->
+      <img id="preview">
+
+      <!-- Result Card -->
+      <div id="resultCard" class="result-card hidden">
+        <h3>Engagement Result</h3>
+        <p id="result"></p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Floating Background Circles -->
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+
+</section>
+
+<!-- ================= FEATURES SECTION ================= -->
+
+<section class="section container" id="features">
+
+  <h2 class="text-center gradient-text mb-40">Powerful Features</h2>
+
+  <div class="grid-3">
+
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>Real-Time FER</h3>
+      <p>Detect facial expressions instantly using AI models.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>Analytics Dashboard</h3>
+      <p>View engagement trends with interactive charts.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon"></div>
+      <h3>Cloud Storage</h3>
+      <p>Store attendance records securely in cloud database.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="text-center mt-60 mb-40">
+  <p>© 2026 Smart Attendance | Built for Solution challange</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
