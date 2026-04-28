@@ -149,7 +149,7 @@ By giving teachers real-time visibility into student engagement, Smart Attendanc
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/himshxmx/ai-fer-Google-sdk.git
+git clone https://github.com/himshxrmx/ai-fer-Google-sdk.git
 cd ai-fer-Google-sdk
 ```
 
